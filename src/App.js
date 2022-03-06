@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import React from "react";
+import Inicio from "./view/Inicio";
+import Crear from "./view/Crear";
+import Found from "./view/Found";
+import Login from "./view/Login";
+import Telas from "./view/Telas";
+import Productos from "./view/Productos";
+import Foto from "./assets/img/images (13).jfif"
+import Navegacion from "./components/Navegacion";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export default function App() {
+    return (
+
+       
+           
+      
+
+        <BrowserRouter>
+       
+        <Navegacion />
+            <Routes>
+           
+                <Route path="/" element={<Inicio/>} />
+                <Route path="*" element={<Found/>} />
+                <Route path="/crear" element={<Crear/>} />
+                <Route path="/login" element={<Login/>} />
+                <Route path="/telas" element={<Telas/>} />
+                <Route path="/productos" element={<Productos/>} />
+            
+
+            </Routes>
+            <img src={Foto}/>
+        </BrowserRouter>
+
+    
+    )
 }
-
-export default App;
